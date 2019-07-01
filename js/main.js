@@ -1,4 +1,5 @@
 
+	//asigning keys to variables
 	var oneBtn = document.getElementById("calc-one");
 	var twoBtn = document.getElementById("calc-two");
 	var threeBtn = document.getElementById("calc-three");
@@ -27,10 +28,10 @@
 	var calcOperatorBtns = document.getElementsByClassName("calc-btn-operator");
 	var displayValElement = document.getElementById("calc-display-val");
 	var displayValAnswer = document.getElementById("calc-display-input");
-
+	//Display value assign to display 0
 	var displayVal = "0";
-	var pendingVal;
-	var evalStringArray = [];
+	var pendingVal;//variable to store initial value to be operated on
+	var evalStringArray = [];//empty array to store values to be operated on
 
 	var updateDisplayVal = (clickObj) => {
 		btnText = clickObj.target.innerText;
