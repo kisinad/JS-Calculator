@@ -12,7 +12,7 @@
 	var doubleZeroBtn = document.getElementById("double-zero");
 
 	var plusBtn = document.getElementById("calc-plus");
-	var andBtn = document.getElementById("calc-and");
+	var orBtn = document.getElementById("calc-or");
 	var timesBtn = document.getElementById("calc-times");
 	var squareBtn = document.getElementById("calc-sqrt");
 	var minusBtn = document.getElementById("calc-minus");
@@ -33,7 +33,7 @@
 	var evalStringArray = [];
 
 	var updateDisplayVal = (clickObj) => {
-		var btnText = clickObj.target.innerText;
+		btnText = clickObj.target.innerText;
 
 		if(displayVal ==="0")
 			displayVal = "";
@@ -66,12 +66,34 @@
 				evalStringArray.push("*");
 				break;
 			case "/":
-				pendingVal =displayVal;
+				pendingVal = displayVal;
 				displayVal = "0";
 				displayValElement.innerText = displayVal;
 				evalStringArray.push(pendingVal);
 				evalStringArray.push("/");
 				break;
+			case "%":
+				pendingVal = displayVal;
+				displayVal = "0";
+				displayValElement.innerText = displayVal;
+				evalStringArray.push(pendingVal);
+				evalStringArray.push("%");
+				break;
+			case "^":
+				pendingVal = displayVal;
+				displayVal = "0";
+				displayValElement.innerText = displayVal;
+				evalStringArray.push(pendingVal);
+				evalStringArray.push("^");
+				break;
+			// case "sqrt()":
+			// 	pendingVal = displayVal;
+			// 	displayVal = "0";
+			// 	displayValElement.innerText = displayVal;
+			// 	//evalStringArray.push(pendingVal);
+			// 	evalStringArray.push(""+""+Math.sqrt(displayValElement.innerText)+"");
+			// 	// doMath();
+			// 	break;
 			case "=":
 				evalStringArray.push(displayVal);
 				var evaluation = eval(evalStringArray.join(" "));
@@ -98,3 +120,13 @@
 		evalStringArray = [];
 		displayValElement.innerHTML = displayVal;
 	};
+//Get square root
+squareBtn.onclick = () =>{
+	pendingVal = displayValElement.innerText;
+	// for (let i = 0; i<calcNumBtns.length; i++){
+	// 	calcNumBtns[i].addEventListener("click", updateDisplayVal,false);}
+// var inputNum1=document.form1.input1.value;
+var result = Math.sqrt(pendingVal);
+displayValAnswer.innerText = result;
+// document.form1.answer.value = result;
+};

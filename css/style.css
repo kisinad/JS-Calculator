@@ -41,7 +41,7 @@ html {
 .calc-btn{
   background-color: silver;
   color: black;
-  width: 90px;
+  width: 87.6px;
   height: 90px;
   border: 1px solid grey;
   text-align: center;
@@ -49,7 +49,7 @@ html {
   font-size: 32px;
   font-weight: 100;
   padding: 0 15px 0 15px;
-  margin: 23px;
+  margin: 1px;
 }
 .calc-btn:hover{
   background-color: #DAA520;
@@ -66,16 +66,17 @@ html {
   padding: 10px;
 }
 .calculator-card{
-  border: 1px solid yellow;
-  width: 550px;
+  border: 2px solid yellow;
+  width: 500px;
   margin: 0 auto;
   padding: 10px;
   text-align: center;
-  margin-left: calc(50%-225px);
+  margin-left: auto;
+  padding-left: 1px;
 
 }
 .calc-primary{
-  margin-left: calc(50%-225px);
+  margin-left: calc(50%-250px);
 }
 #calc-display-val{
   height: 70px; 
